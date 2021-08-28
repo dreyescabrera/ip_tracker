@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+     crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+     crossorigin=""></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>IP Address Tracker</title>
+  </head>
+  <body>
+    <div class="header">
+      <h1 class="header__title">IP Address Tracker</h1>
+      <div class="header__input">
+        <input class="input" type="text" placeholder="Search for any IP address or domain" id="input" />
+        <button class="button" type="button" id="button"> > </button>
+      </div>
+      <div class="header__response" id="header-response">
+        <div class="response">
+          <p class="response__title">IP ADDRESS</p>
+          <p class="response__content" id="response-ip">loading...</p>
+        </div>
+        <hr class="vr">
+        <div class="response">
+          <p class="response__title">LOCATION</p>
+          <p class="response__content" id="response-location">loading...</p>
+        </div>
+        <hr class="vr">
+        <div class="response">
+          <p class="response__title">TIMEZONE</p>
+          <p class="response__content" id="response-timezone">loading...</p>
+        </div>
+        <hr class="vr">
+        <div class="response">
+          <p class="response__title">ISP</p>
+          <p class="response__content" id="response-isp">loading...</p>
+        </div>
+      </div>
+    </div>
+    <div id="map"></div>
+    <script src="./js/index.js" charset="utf-8"></script>
+  </body>
+</html>

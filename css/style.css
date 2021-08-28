@@ -1,0 +1,96 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+html{
+  font-size: 62.5%;
+}
+body{
+  height: 100vh;
+}
+.header{
+  background-image: url(../img/pattern-bg.png);
+  height: 32vh;
+  text-align: center;
+  padding-top: 1px;
+  position: relative;
+}
+.header__title{
+  color: white;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  margin: 20px 0;
+}
+.header__input{
+  border-radius: 12px;
+  overflow: hidden;
+  width: 50%;
+  height: 40px;
+  margin: 0 auto;
+  position: relative;
+}
+.input{
+  height: 100%;
+  width: 100%;
+  padding: 5px 15px;
+  outline: none;
+}
+.input::placeholder{
+  color: darkgray
+}
+.button{
+  background: black;
+  border: 0;
+  color: white;
+  cursor: pointer;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  transition: 150ms all;
+  width: 50px;
+}
+.button:hover{
+  background: dimgray;
+}
+.header__response{
+  align-items: center;
+  background: white;
+  border-radius: 15px;
+  bottom: -55px;
+  box-shadow: 0 0 10px gray;
+  display: flex;
+  height: 120px;
+  position: absolute;
+  width: 80%;
+  z-index: 2;
+  left: 0; /*esto centra el div absoluto*/
+  right: 0;
+  margin: 0 auto;
+}
+.response{
+  color: gray;
+  /* flex-grow: 1; */
+  width: 25%;
+  font-size: 1.1rem;
+  font-weight: bolder;
+  height: 100%;
+  letter-spacing: 2px;
+  padding: 25px 10px 25px 25px;
+  text-align: left;
+}
+.response__content{
+  margin-top: 10px;
+  color: black;
+  font-size: 2rem;
+}
+.vr{
+  width: 0.1px;
+  height:80px;
+  display: inline-block;
+}
+#map{
+  height: 68vh;
+  z-index: 0
+}
