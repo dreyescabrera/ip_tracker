@@ -9,25 +9,22 @@ let actualIP;
 let latitudeAndLongitude = []
 let mymap;
 let marker;
-//IP local
-// const getLocalIP = () => {
-//   fetch("https://geo.ipify.org/api/v1?apiKey=at_psspGHJpI5KNLoymwem4BETIHQwv5&domain=")
-//   .then( response => response.json())
-//   .then( response => {
-//     actualIP = response.ip
-//     return fetch(`https://geo.ipify.org/api/v1?apiKey=at_psspGHJpI5KNLoymwem4BETIHQwv5&ipAddress=${actualIP}`)
-//   })
-//   .then( response => response.json())
-//   .then( response => manipulateData(response))
-// }
 
-const getExternalIP = (url) => {
+//obtiene el IP y manda a manipular los datos
+const getIP = (url) => {
   fetch(url)
-  .then( response => response.json())
+  .then( response => {
+    if (response.ok) {
+      return response.json()
+    } else {
+      throw new Error(`${response.status} ${response.statusText}`)
+    }
+  })
   .then( response => manipulateData(response))
+  .catch( error => alert(error))
 }
 
-function manipulateData(response) {
+const manipulateData = (response) => {
   response_ip.innerHTML = response.ip
   response_location.innerHTML = `${response.location.city}, ${response.location.region} ${response.location.postalCode}`
   response_timezone.innerHTML = `UTC ${response.location.timezone}`
@@ -45,7 +42,6 @@ function manipulateData(response) {
       zoomOffset: -1,
       accessToken: 'your.mapbox.access.token'
     }).addTo(mymap);
-    console.log(Boolean(mymap))
   } else {
     mymap.setView(latitudeAndLongitude, 13)
     marker = L.marker(latitudeAndLongitude).addTo(mymap);
@@ -53,11 +49,11 @@ function manipulateData(response) {
   marker.bindPopup("Tracking of IP #" + popup++)
 }
 
-function search () {
-  getExternalIP("https://geo.ipify.org/api/v1?apiKey=at_psspGHJpI5KNLoymwem4BETIHQwv5&domain=" + input.value)
-  console.log("Lo intenté")
+//manda a realizar una busqueda
+const search = () => {
+  getIP("https://geo.ipify.org/api/v1?apiKey=at_psspGHJpI5KNLoymwem4BETIHQwv5&domain=" + input.value)
 }
-search()
+search() //ejecuta la busqueda la primera vez
 
 input.addEventListener("keyup", (ev) => {
   if (ev.keyCode == 13) { //enter

@@ -25,11 +25,12 @@ body{
 }
 .header__input{
   border-radius: 12px;
-  overflow: hidden;
-  width: 50%;
   height: 40px;
   margin: 0 auto;
+  overflow: hidden;
   position: relative;
+  width: 360px;
+  max-width: 90%;
 }
 .input{
   height: 100%;
@@ -49,7 +50,7 @@ body{
   position: absolute;
   right: 0;
   transition: 150ms all;
-  width: 50px;
+  width: 40px;
 }
 .button:hover{
   background: dimgray;
@@ -71,7 +72,6 @@ body{
 }
 .response{
   color: gray;
-  /* flex-grow: 1; */
   width: 25%;
   font-size: 1.1rem;
   font-weight: bolder;
@@ -84,6 +84,7 @@ body{
   margin-top: 10px;
   color: black;
   font-size: 2rem;
+  letter-spacing: 0px;
 }
 .vr{
   width: 0.1px;
@@ -93,4 +94,81 @@ body{
 #map{
   height: 68vh;
   z-index: 0
+}
+
+@media (max-width: 840px) {
+  .response{
+    padding-left: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .header__response{
+    width: 95%;
+  }
+  .response__content{
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 624px) {
+  .response{
+    font-size: 0.9rem;
+  }
+  .response__content{
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 560px) {
+  .response__content{
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 490px) {
+  .header{
+    height: 38vh;
+  }
+  .header__title{
+    font-size: 1.8rem;
+  }
+  .header__input{
+    height: 50px;
+  }
+  .header__response{
+    top: 20px;
+    bottom: 0;
+    flex-direction: column;
+    height: auto;
+    padding: 4px 0 12px;
+    position: relative;
+    width: 90%;
+  }
+  .response{
+    font-size: 1rem;
+    padding: 15px 0 0;
+    text-align: center;
+    width: 100%;
+  }
+  .response__content{
+    font-size: 1.6rem;
+    margin-top: 5px;
+  }
+  .vr{
+    display: none;
+  }
+  #map{
+    height: 62vh;
+  }
+}
+@media (max-width: 320px) {
+  .header__title{
+    margin: 15px 0;
+  }
+  .header__input{
+    height: 40px;
+  }
+  .header__response{
+    top: 15px;
+  }
+  .response{
+    padding-top: 10px;
+  }
 }
