@@ -135,6 +135,7 @@ body{
   .header__response{
     top: 20px;
     bottom: 0;
+    box-shadow: 0 0 10px #444;
     flex-direction: column;
     height: auto;
     padding: 4px 0 12px;
