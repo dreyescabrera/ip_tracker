@@ -16,6 +16,7 @@ body{
   text-align: center;
   padding-top: 1px;
   position: relative;
+  background-size: cover;
 }
 .header__title{
   color: white;
